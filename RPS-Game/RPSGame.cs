@@ -92,9 +92,7 @@ namespace RPS_Game
             Console.WriteLine("----------------------");
         }
         public void playRound()
-        {
-            user.move = readUserChoice();
-            AI.move = (mode== enMode.hard? getAICheatChoice(user.move): getAIChoice());
+        {          
             enWinner roundWinner= determineRoundWinner();
             printRoundInfo(roundWinner);
 
@@ -148,6 +146,8 @@ namespace RPS_Game
             mainScreen();
             for (int i = 0; i < 3; i++)
             {
+                user.move = readUserChoice();
+                AI.move = (mode == enMode.hard ? getAICheatChoice(user.move) : getAIChoice());
                 playRound();
             }
             printFinalResult();
