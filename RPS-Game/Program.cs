@@ -4,7 +4,8 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            RPSGame game1= new RPSGame();
+            game1.startGame();
         }
     }
 }
